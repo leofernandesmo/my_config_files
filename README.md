@@ -9,4 +9,5 @@ Update: 24/09/2015
 ----------------------------------------------
 
 Aplicação - Arquivo -  Local
+
     Emacs - .emacs  -  /home/user/
