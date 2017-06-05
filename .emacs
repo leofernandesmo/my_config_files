@@ -138,3 +138,28 @@
 ;;Wrangler elisp: Puglin para Wrangler refactoring tool
 ;(add-to-list 'load-path "/usr/local/lib/erlang/lib/wrangler-1.1.01/elisp")
 ;(require 'wrangler)
+
+;; If you don't have MELPA in your package archives:
+(require 'package) ;; You might already have this line
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize) ;; You might already have this line
+
+;;(package-refresh-contents)
+;;(package-install 'intero)
+;;(add-hook 'haskell-mode-hook 'intero-mode)
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+;;Auto-complete plugin
+;;To install: https://github.com/auto-complete/auto-complete
+;; M-x package-install [RET] auto-complete [RET]
+;; Default configuration
+(ac-config-default)
+
+;;Flycheck: Modern on-the-fly syntax checking extension for GNU Emacs
+;;To-install: https://github.com/flycheck/flycheck
+(global-flycheck-mode)
